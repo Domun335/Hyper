@@ -1,0 +1,36 @@
+@use './variables.scss' as *;
+
+body {
+  margin: 0px;
+  background-color: $backgraund;
+  color: $white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  width: 100%;
+  @include setFlex(column);
+
+  &__titles {
+    margin: auto;
+    width: 80%;
+    @include setFlex(row, space-between, start);
+  }
+  &__container {
+    margin-top: 120px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &__movie {
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
