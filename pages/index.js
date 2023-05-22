@@ -17,6 +17,7 @@ export default function Home({ hypers }) {
       <main className="main">
         <div className="main__titles">
           <h1>Movie data base:</h1>
+          <Link href="/announcements">ant</Link>
           <h1>Hyper</h1>
         </div>
 
