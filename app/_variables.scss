@@ -1,0 +1,15 @@
+$backGraund: #111111;
+$textColor: #ececec;
+
+@mixin setFlex(
+  $flex-direction,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 0px
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}

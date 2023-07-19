@@ -1,9 +1,0 @@
-$backgraund: #0e0e0e;
-$white: #ffffff;
-
-@mixin setFlex($flex-direction, $justify-content: center, $align-items: center) {
-  display: flex;
-  flex-direction: $flex-direction;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}

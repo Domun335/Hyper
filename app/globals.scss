@@ -1,0 +1,8 @@
+@use './variables' as *;
+
+body {
+  margin: 0px;
+  background-color: $backGraund;
+  color: $textColor;
+  @include setFlex(row);
+}
