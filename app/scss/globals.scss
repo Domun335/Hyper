@@ -2,6 +2,7 @@
 
 body {
   margin: 0px;
+  height: 65vh;
   background-color: $backGraund;
   color: $textColor;
   @include setFlex(row);
