@@ -1,9 +1,19 @@
 $backGraund: #151515;
 $textColor: #fcfcfc;
+$mainColor: #3b06c2;
 
+//* Flex template
 @mixin setFlex($flex-direction, $justify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
+}
+
+//* Clamp template
+@mixin setClamp($line-clamp: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-clamp;
+  overflow: hidden;
 }

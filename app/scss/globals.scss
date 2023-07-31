@@ -2,8 +2,51 @@
 
 body {
   margin: 0px;
-  height: 65vh;
   background-color: $backGraund;
   color: $textColor;
-  @include setFlex(row);
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 7rem;
+}
+.posts {
+  margin: auto;
+  width: min(1280px, 98%);
+  @include setFlex(row, flex-start);
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.post {
+  width: 400px;
+  @include setFlex(column, flex-start, flex-start);
+
+  &__date {
+    align-self: flex-end;
+    width: 120px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 20px solid $mainColor;
+    display: flex;
+    justify-content: center;
+  }
+  &__image {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+  }
+  &__title {
+    margin: 10px 0px;
+    font-size: 1.2rem;
+    @include setClamp;
+  }
+}
+.footer {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
 }
