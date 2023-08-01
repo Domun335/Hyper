@@ -1,0 +1,42 @@
+@use './variables' as *;
+
+//* Body
+body {
+  margin: 0px;
+  background-color: $backGround;
+  color: $textColor;
+}
+a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+//* Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+//* Main Page
+.main-page {
+  margin: auto;
+  width: min(1280px, 98%);
+  height: calc(100vh - 241px);
+
+  &__title {
+    padding-top: 150px;
+    text-align: center;
+  }
+}
