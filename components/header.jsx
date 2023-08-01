@@ -1,6 +1,7 @@
 'use client'
 import './styles/header.scss'
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Header() {
@@ -11,7 +12,10 @@ export default function Header() {
   return (
     <div className="header">
       <Link href="/">
-        <h1 className="header__title">CMS Test</h1>
+        <div className="header__title">
+          <Image src="/logo.svg" alt="hyper" width="40" height="40" />
+          <h1>Hyper</h1>
+        </div>
       </Link>
 
       <div className="header__menu" onClick={() => setIsOpen(!isOpen)}>
@@ -30,7 +34,9 @@ export default function Header() {
             Filmy
           </Link>
         </li>
-        <li>Dwa</li>
+        <li>
+          <Link href="/">Test</Link>
+        </li>
       </ul>
     </div>
   )

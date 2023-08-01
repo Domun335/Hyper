@@ -2,7 +2,7 @@
 
 .posts {
   margin: auto;
-  width: min(1280px, 98%);
+  width: min(1280px, 95%);
   @include setFlex(row, flex-start);
   flex-wrap: wrap;
   gap: 40px;

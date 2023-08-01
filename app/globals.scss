@@ -4,7 +4,7 @@
 body {
   margin: 0px;
   background-color: $backGround;
-  color: $textColor;
+  color: $white;
 }
 a {
   position: relative;
@@ -26,17 +26,18 @@ a {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
+  background: #fff;
 }
 
 //* Main Page
 .main-page {
   margin: auto;
-  width: min(1280px, 98%);
-  height: calc(100vh - 241px);
+  width: min(1280px, 95%);
+  height: calc(100vh - 200px);
+  @include setFlex(column);
+  gap: 20px;
 
   &__title {
-    padding-top: 150px;
     text-align: center;
   }
 }

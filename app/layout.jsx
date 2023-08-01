@@ -6,7 +6,10 @@ import Footer from '@/components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'CMS Test',
+  title: {
+    template: '%s | Hyper',
+    default: 'Hyper',
+  },
   description: 'Test csm',
 }
 
