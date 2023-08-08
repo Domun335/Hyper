@@ -1,6 +1,7 @@
 import './filmy.scss'
 import { getPosts } from '@/lib/queries'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function Filmy() {
   const posts = await getPosts()
@@ -17,7 +18,9 @@ export default async function Filmy() {
             height="500"
             className="post__image"
           />
-          <p className="post__title">{post.title}</p>
+          <Link href={`filmy/${post.slug}`}>
+            <p className="post__title">{post.title}</p>
+          </Link>
         </div>
       ))}
     </div>
