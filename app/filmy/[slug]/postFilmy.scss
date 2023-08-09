@@ -1,0 +1,7 @@
+@use '@/app/variables' as *;
+
+.post-film {
+  margin: auto;
+  width: min(1280px, 98%);
+  @include setFlex(column);
+}

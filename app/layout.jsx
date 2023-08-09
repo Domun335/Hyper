@@ -10,7 +10,7 @@ export const metadata = {
     template: '%s | Hyper',
     default: 'Hyper',
   },
-  description: 'Test csm',
+  description: 'Hyper description',
 }
 
 export default function RootLayout({ children }) {
