@@ -21,7 +21,7 @@
     &--droped {
       position: absolute;
       padding: 40px;
-      top: 70px;
+      top: 60px;
       right: 0px;
       list-style: none;
       background-color: #000;
@@ -30,8 +30,8 @@
       flex-direction: column;
       gap: 15px;
       border-radius: 10px;
-      font-size: 1.2rem;
-      transition: opacity 0.2s ease-in;
+      font-size: 1.25rem;
+      z-index: 5;
     }
     &--off {
       opacity: 0;

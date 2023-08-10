@@ -10,7 +10,8 @@ export const metadata = {
     template: '%s | Hyper',
     default: 'Hyper',
   },
-  description: 'Hyper description',
+  description: 'Hyper website',
+  creator: 'Dominik Zwoliński',
 }
 
 export default function RootLayout({ children }) {

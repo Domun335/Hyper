@@ -2,44 +2,45 @@
 
 .posts {
   margin: auto;
+  margin-top: 40px;
   width: min(1280px, 95%);
-  @include setFlex(row, flex-start);
-  flex-wrap: wrap;
-  gap: 40px;
-}
-.post {
-  width: 400px;
-  @include setFlex(column, flex-start, flex-start);
-
-  &__date {
-    align-self: flex-end;
-    width: 125px;
-    height: 0px;
-    border-left: 20px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 20px solid $mainColor;
-    display: flex;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @media all and (width <= 1200px) {
+    grid-template-columns: repeat(3, 1fr);
   }
-  &__image {
-    width: 400px;
-    height: 500px;
-    object-fit: cover;
+  @media all and (width <= 900px) {
+    grid-template-columns: repeat(2, 1fr);
   }
-  &__title {
-    margin: 20px 0px;
-    font-size: 1.2rem;
-    @include setClamp;
+  @media all and (width <= 600px) {
+    grid-template-columns: 1fr;
+  }
+  gap: 25px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      margin-top: -20px;
+  .post {
+    width: 100%;
+    @include setFlex(column, flex-start, flex-start);
+
+    &__trapeze {
+      align-self: end;
       width: 125px;
-      height: 0px;
-      border-left: 0px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 20px solid $mainColor;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      border-left: 30px solid transparent;
+      border-right: 0px solid transparent;
+      border-bottom: 20px solid $mainColor;
+    }
+
+    &__image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    &__title {
+      margin: 8px 0px;
+      font-size: 1.2rem;
+      @include setClamp;
     }
   }
 }

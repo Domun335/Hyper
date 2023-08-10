@@ -8,6 +8,7 @@ export default async function PostFilmy({ params }) {
   return (
     <article className="post-film">
       <Image src={hyper.image.url} alt={hyper.title} width="500" height="600" />
+      <p>{hyper.duration} min</p>
       <h1>{hyper.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: hyper.description.html }} />
     </article>
