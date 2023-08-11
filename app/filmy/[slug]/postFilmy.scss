@@ -2,6 +2,47 @@
 
 .post-film {
   margin: auto;
-  width: min(1280px, 98%);
+  width: min(600px, 98%);
   @include setFlex(column);
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  &__description {
+    width: 100%;
+    @include setFlex(row, space-between);
+  }
+  &__border {
+    width: 100%;
+    border-color: $mainColor;
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    align-self: flex-start;
+  }
+  &__content {
+    margin: 15px 0px;
+    color: #cfcfcf;
+    font-size: 1.1rem;
+  }
+  &__images {
+    margin: 40px 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__return {
+    color: $mainColor;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
 }

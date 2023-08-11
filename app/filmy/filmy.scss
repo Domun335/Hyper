@@ -20,6 +20,7 @@
   .post {
     width: 100%;
     @include setFlex(column, flex-start, flex-start);
+    transition: 0.4s;
 
     &__trapeze {
       align-self: end;
@@ -41,6 +42,10 @@
       margin: 8px 0px;
       font-size: 1.2rem;
       @include setClamp;
+    }
+
+    &:hover {
+      scale: 1.02;
     }
   }
 }
