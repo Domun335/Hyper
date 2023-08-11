@@ -1,6 +1,6 @@
 import './postFilmy.scss'
 import { getPostBySlug } from '@/lib/queries'
-import Image from 'next/image'
+import CustomImage from '@/components/customImage'
 import Link from 'next/link'
 
 export default async function PostFilmy({ params }) {
@@ -8,7 +8,7 @@ export default async function PostFilmy({ params }) {
 
   return (
     <article className="post-film">
-      <Image
+      <CustomImage
         src={post.image.url}
         alt={post.title}
         width="650"
@@ -33,12 +33,13 @@ export default async function PostFilmy({ params }) {
 
       <div className="post-film__images">
         {post.images.map((image) => (
-          <Image
+          <CustomImage
             src={image.url}
             alt={post.title}
             width="400"
             height="400"
             key={image.url}
+            className="post-film__images--img"
           />
         ))}
       </div>

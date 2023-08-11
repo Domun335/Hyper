@@ -33,9 +33,12 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media all and (width <= 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     gap: 15px;
 
-    img {
+    &--img {
       width: 100%;
       height: auto;
     }
