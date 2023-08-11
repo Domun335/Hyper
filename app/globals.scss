@@ -35,9 +35,18 @@ a {
   width: min(1280px, 95%);
   height: calc(100vh - 200px);
   @include setFlex(column);
-  gap: 20px;
 
-  &__title {
-    text-align: center;
+  &__logo {
+    width: min(280px, 100%);
+    animation: rotate 0.4s ease;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 }

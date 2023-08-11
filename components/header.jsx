@@ -12,15 +12,15 @@ export default function Header() {
 
   return (
     <div className="header">
-      <Link className="header__title" href="/">
+      <Link className="header__title" href="/" onClick={reset}>
         <Image src="/logo.svg" alt="hyper" width="40" height="40" />
         <h1>Hyper</h1>
       </Link>
 
       <div className="header__menu" onClick={() => setIsOpen(!isOpen)}>
-        <div className="header__item" />
-        <div className="header__item" />
-        <div className="header__item" />
+        <div className={`header__item ${isOpen ? 'header__item--on' : ''}`} />
+        <div className={`header__item ${isOpen ? 'header__item--on' : ''}`} />
+        <div className={`header__item ${isOpen ? 'header__item--on' : ''}`} />
       </div>
 
       <ul
