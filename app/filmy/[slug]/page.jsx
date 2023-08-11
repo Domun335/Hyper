@@ -1,6 +1,6 @@
 import './postFilmy.scss'
 import { getPostBySlug } from '@/lib/queries'
-import CustomImage from '@/components/customImage'
+import CustomImage from '@/components/CustomImage'
 import Link from 'next/link'
 
 export default async function PostFilmy({ params }) {
