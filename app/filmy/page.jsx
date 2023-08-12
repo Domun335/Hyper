@@ -11,7 +11,7 @@ export default async function Filmy() {
   const posts = await getPosts()
 
   return posts.length > 0 ? (
-    <div className="posts">
+    <main className="posts">
       {posts.map((post) => (
         <Link className="post" href={`filmy/${post.slug}`} key={post.id}>
           <span className="post__trapeze">{post.releaseDate}</span>
@@ -27,7 +27,7 @@ export default async function Filmy() {
           <p className="post__title">{post.title}</p>
         </Link>
       ))}
-    </div>
+    </main>
   ) : (
     <h1 style={{ textAlign: 'center' }}>501</h1>
   )

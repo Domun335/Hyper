@@ -1,0 +1,8 @@
+@use '../variables.scss' as *;
+
+.todo {
+  margin: auto;
+  width: min(1280px, 95%);
+  height: 60vh;
+  @include setFlex(column);
+}

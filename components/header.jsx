@@ -34,8 +34,8 @@ export default function Header() {
           </Link>
         </li>
         <li>
-          <Link href="/" onClick={reset}>
-            Test
+          <Link href="/lista-zadan" onClick={reset}>
+            Lista Zadań
           </Link>
         </li>
       </ul>
