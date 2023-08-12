@@ -44,8 +44,10 @@
       @include setClamp;
     }
 
-    &:hover {
-      scale: 1.02;
+    @media all and (width >= 1000px) {
+      &:hover {
+        scale: 1.02;
+      }
     }
   }
 }

@@ -43,8 +43,10 @@
       height: auto;
       transition: 0.3s scale;
 
-      &:hover {
-        scale: 1.04;
+      @media all and (width >= 1000px) {
+        &:hover {
+          scale: 1.04;
+        }
       }
     }
   }
