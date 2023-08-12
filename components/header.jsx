@@ -35,7 +35,7 @@ export default function Header() {
         </li>
         <li>
           <Link href="/lista-zadan" onClick={reset}>
-            Lista Zadań
+            Todo
           </Link>
         </li>
       </ul>
