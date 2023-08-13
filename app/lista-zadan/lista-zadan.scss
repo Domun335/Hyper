@@ -3,6 +3,108 @@
 .todo {
   margin: auto;
   width: min(1280px, 95%);
-  height: 60vh;
-  @include setFlex(column);
+  min-height: calc(100vh - 200px);
+  @include setFlex(column, flex-start, center);
+  gap: 60px;
+
+  &__form {
+    margin-top: 85px;
+    width: min(500px, 95%);
+    @include setFlex(column);
+
+    label {
+      margin-bottom: 25px;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+    input {
+      padding: 5px 10px;
+      width: 100%;
+      border: 2px solid #000;
+      border-radius: 15px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 2px;
+      width: 80%;
+      border-radius: 15px;
+      background-color: $white;
+      font-size: 1.1rem;
+      border: 1px solid #000;
+      transition: 0.1s;
+
+      &:active {
+        background-color: #0000007a;
+        color: #fff;
+      }
+    }
+  }
+  &__list {
+    padding: 0px;
+    list-style: none;
+    @include setFlex(column, center, flex-start);
+    gap: 15px;
+
+    li {
+      @include setFlex(row);
+      gap: 20px;
+    }
+    label {
+      @include setFlex(row);
+      gap: 20px;
+      font-size: 1.5rem;
+    }
+    input[type='checkbox'] {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 25px;
+        display: block;
+        background-color: $white;
+        border: 2px solid #000;
+        border-radius: 10px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        display: block;
+        background-color: $mainColor;
+        border-radius: 6px;
+        scale: 0;
+        transition: 0.1s scale;
+      }
+      &:checked::after {
+        scale: 1;
+      }
+    }
+    button {
+      padding: 4px 12px;
+      background-color: $mainColor;
+      color: #fff;
+      font-size: 0.9rem;
+      border: 1px solid #000;
+      border-radius: 10px;
+      transition: 0.4s scale;
+
+      &:hover {
+        scale: 1.04;
+      }
+    }
+    &--none {
+      user-select: none;
+      font-size: 1.5rem;
+      color: #4d4d4d;
+    }
+  }
 }

@@ -9,9 +9,7 @@ export default function ListaZadan() {
 
   useEffect(() => {
     const localValue = localStorage.getItem('ITEMS')
-    if (localValue) {
-      setTodos(JSON.parse(localValue))
-    }
+    if (localValue) setTodos(JSON.parse(localValue))
   }, [])
   useEffect(() => {
     localStorage.setItem('ITEMS', JSON.stringify(todos))
@@ -39,7 +37,7 @@ export default function ListaZadan() {
 
   return (
     <main className="todo">
-      <form onSubmit={handleSubmit}>
+      <form className="todo__form" onSubmit={handleSubmit}>
         <label htmlFor="input">Dodaj zadanie</label>
         <input
           value={newItem}
@@ -50,8 +48,8 @@ export default function ListaZadan() {
         <button type="submit">Dodaj</button>
       </form>
 
-      <ul>
-        {todos.length === 0 && <li>Brak zadań</li>}
+      <ul className="todo__list">
+        {todos.length === 0 && <li className="todo__list--none">Brak zadań</li>}
         {todos.map((todo) => (
           <li key={todo.id}>
             <label>
