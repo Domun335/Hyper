@@ -7,9 +7,7 @@ export default function ListaZadan() {
   const [newItem, setNewItem] = useState('')
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem('ITEMS')
-    if (localValue == null) return []
-
-    return JSON.parse(localValue)
+    return localValue ? JSON.parse(localValue) : []
   })
 
   useEffect(() => {
@@ -19,32 +17,21 @@ export default function ListaZadan() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (newItem === '') return
+    if (newItem.trim() === '') return
 
-    setTodos((currentTodos) => {
-      return [
-        ...currentTodos,
-        { id: crypto.randomUUID(), title: newItem, completed: false },
-      ]
-    })
-
+    setTodos((currentTodos) => [
+      ...currentTodos,
+      { id: crypto.randomUUID(), title: newItem, completed: false },
+    ])
     setNewItem('')
   }
   const toggleTodo = (id, completed) => {
-    setTodos((currentTodos) => {
-      return currentTodos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed }
-        }
-
-        return todo
-      })
-    })
+    setTodos((currentTodos) =>
+      currentTodos.map((todo) => (todo.id === id ? { ...todo, completed } : todo))
+    )
   }
   const deleteTodo = (id) => {
-    setTodos((currentTodos) => {
-      return currentTodos.filter((todo) => todo.id !== id)
-    })
+    setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== id))
   }
 
   return (
@@ -57,7 +44,7 @@ export default function ListaZadan() {
           type="text"
           id="input"
         />
-        <button>Dodaj</button>
+        <button type="submit">Dodaj</button>
       </form>
 
       <ul>
