@@ -45,7 +45,9 @@ export default function ListaZadan() {
           type="text"
           id="input"
         />
-        <button type="submit">Dodaj</button>
+        <button className="todo__submit" type="submit">
+          Dodaj
+        </button>
       </form>
 
       <ul className="todo__list">
@@ -55,12 +57,15 @@ export default function ListaZadan() {
             <label>
               <input
                 type="checkbox"
+                className="todo__checkbox"
                 checked={todo.completed}
                 onChange={(e) => toggleTodo(todo.id, e.target.checked)}
               />
               {todo.title}
             </label>
-            <button onClick={() => deleteTodo(todo.id)}>Usuń</button>
+            <button className="todo__delete" onClick={() => deleteTodo(todo.id)}>
+              Usuń
+            </button>
           </li>
         ))}
       </ul>
