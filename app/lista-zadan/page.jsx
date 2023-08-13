@@ -5,11 +5,14 @@ import { useEffect, useState } from 'react'
 
 export default function ListaZadan() {
   const [newItem, setNewItem] = useState('')
-  const [todos, setTodos] = useState(() => {
-    const localValue = localStorage.getItem('ITEMS')
-    return localValue ? JSON.parse(localValue) : []
-  })
+  const [todos, setTodos] = useState([])
 
+  useEffect(() => {
+    const localValue = localStorage.getItem('ITEMS')
+    if (localValue) {
+      setTodos(JSON.parse(localValue))
+    }
+  }, [])
   useEffect(() => {
     localStorage.setItem('ITEMS', JSON.stringify(todos))
   }, [todos])
