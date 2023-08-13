@@ -6,14 +6,14 @@ import { useEffect, useState } from 'react'
 export default function ListaZadan() {
   const [newItem, setNewItem] = useState('')
   const [todos, setTodos] = useState(() => {
-    const localValue = localStorage.getItem('ITEMS')
+    const localValue = localStorage.getItem('ITEMS') || ''
     if (localValue == null) return []
 
     return JSON.parse(localValue)
   })
 
   useEffect(() => {
-    localStorage.setItem('ITEMS', JSON.stringify(todos))
+    const item = localStorage.setItem('ITEMS', JSON.stringify(todos))
   }, [todos])
 
   const handleSubmit = (e) => {
