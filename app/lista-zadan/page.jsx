@@ -1,14 +1,25 @@
 'use client'
 
 import './lista-zadan.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function ListaZadan() {
   const [newItem, setNewItem] = useState('')
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem('ITEMS')
+    if (localValue == null) return []
+
+    return JSON.parse(localValue)
+  })
+
+  useEffect(() => {
+    localStorage.setItem('ITEMS', JSON.stringify(todos))
+  }, [todos])
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (newItem === '') return
 
     setTodos((currentTodos) => {
       return [
@@ -30,6 +41,11 @@ export default function ListaZadan() {
       })
     })
   }
+  const deleteTodo = (id) => {
+    setTodos((currentTodos) => {
+      return currentTodos.filter((todo) => todo.id !== id)
+    })
+  }
 
   return (
     <main className="todo">
@@ -44,18 +60,22 @@ export default function ListaZadan() {
         <button>Dodaj</button>
       </form>
 
-      {todos.map((todo) => (
-        <li key={todo.id}>
-          <label>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={(e) => toggleTodo(todo.id, e.target.checked)}
-            />
-            {todo.title}
-          </label>
-        </li>
-      ))}
+      <ul>
+        {todos.length === 0 && <li>Brak zadań</li>}
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <label>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={(e) => toggleTodo(todo.id, e.target.checked)}
+              />
+              {todo.title}
+            </label>
+            <button onClick={() => deleteTodo(todo.id)}>Usuń</button>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }
