@@ -3,10 +3,6 @@
 import './lista-zadan.scss'
 import { useEffect, useState } from 'react'
 
-export const metadata = {
-  title: 'Lista Zadań',
-}
-
 export default function ListaZadan() {
   const [newItem, setNewItem] = useState('')
   const [todos, setTodos] = useState([])
