@@ -1,14 +1,15 @@
 import './postFilmy.scss'
 import { getPostBySlug } from '@/lib/queries'
-import CustomImage from '@/components/CustomImage'
+import Image from 'next/image'
 import Link from 'next/link'
+import ImageGallery from '@/components/gallery'
 
 export default async function PostFilmy({ params }) {
   const post = await getPostBySlug(params)
 
   return (
     <article className="post-film">
-      <CustomImage
+      <Image
         src={post.image.url}
         alt={post.title}
         width="650"
@@ -31,18 +32,7 @@ export default async function PostFilmy({ params }) {
 
       <hr className="post-film__border" />
 
-      <div className="post-film__images">
-        {post.images.map((image) => (
-          <CustomImage
-            src={image.url}
-            alt={post.title}
-            width="400"
-            height="400"
-            key={image.url}
-            className="post-film__images--img"
-          />
-        ))}
-      </div>
+      <ImageGallery date={post} />
 
       <Link href="/filmy">
         <p className="post-film__return">Powrót ↗</p>

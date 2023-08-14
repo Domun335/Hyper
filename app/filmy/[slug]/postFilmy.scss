@@ -2,7 +2,7 @@
 
 .post-film {
   margin: auto;
-  width: min(600px, 98%);
+  width: min(600px, 95%);
   @include setFlex(column);
 
   &__image {
@@ -27,28 +27,6 @@
     margin: 15px 0px;
     color: #cfcfcf;
     font-size: 1.1rem;
-  }
-  &__images {
-    margin: 40px 0px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    @media all and (width <= 600px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    gap: 15px;
-
-    &--img {
-      width: 100%;
-      height: auto;
-      transition: 0.3s scale;
-
-      @media all and (width >= 1000px) {
-        &:hover {
-          scale: 1.04;
-        }
-      }
-    }
   }
   &__return {
     color: $mainColor;
