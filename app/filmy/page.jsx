@@ -14,7 +14,7 @@ export default async function Filmy() {
     <main className="posts">
       {posts.map((post) => (
         <Link className="post" href={`filmy/${post.slug}`} key={post.id}>
-          <span className="post__trapeze">{post.releaseDate}</span>
+          <span className="post__trapeze">{post.releaseDate.replaceAll('-', '.')}</span>
 
           <Image
             src={post.image.url}

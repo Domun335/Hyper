@@ -17,7 +17,7 @@ export default async function PostFilmy({ params }) {
       />
       <div className="post-film__description">
         <p>{post.duration} min</p>
-        <p>{post.releaseDate}</p>
+        <p>{post.releaseDate.replaceAll('-', '/')}</p>
       </div>
 
       <hr className="post-film__border" />
