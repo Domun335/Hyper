@@ -52,50 +52,48 @@ a {
 }
 
 //* Gallery Styles
-.gallery {
-  &__content {
-    margin: 40px 0px;
+.gallery__content {
+  margin: 40px 0px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media all and (width <= 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  gap: 15px;
+
+  &--image {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    @media all and (width <= 600px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    gap: 15px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.4s scale;
 
-    &--image {
-      width: 100%;
-      height: auto;
-      cursor: pointer;
-      transition: 0.4s scale;
-
-      @media all and (width >= 1000px) {
-        &:hover {
-          scale: 1.04;
-        }
+    @media all and (width >= 1000px) {
+      &:hover {
+        scale: 1.04;
       }
     }
   }
-  &__image-max {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000db;
-    @include setFlex(row);
-    gap: 25px;
-    z-index: 99;
-    user-select: none;
+}
+.gallery__image-max {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000db;
+  @include setFlex(row);
+  gap: 25px;
+  z-index: 99;
+  user-select: none;
 
-    img {
-      width: min(600px, 80%);
-      height: auto;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button {
-      @extend %btn;
-    }
+  img {
+    width: min(600px, 80%);
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button {
+    @extend %btn;
   }
 }
