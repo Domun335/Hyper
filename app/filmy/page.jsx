@@ -1,4 +1,4 @@
-import './filmy.scss'
+import './movies.scss'
 import { getPosts } from '@/lib/queries'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Filmy',
 }
 
-export default async function Filmy() {
+export default async function Movies() {
   const posts = await getPosts()
 
   return posts.length > 0 ? (
@@ -19,8 +19,8 @@ export default async function Filmy() {
           <Image
             src={post.image.url}
             alt={post.title}
-            width="400"
-            height="400"
+            width={400}
+            height={400}
             className="post__image"
           />
 

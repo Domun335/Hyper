@@ -1,10 +1,10 @@
 @use './variables' as *;
 
-//* Body
+//* General Styles
 body {
   margin: 0px;
-  background-color: $backGround;
-  color: $white;
+  background-color: $background-color;
+  color: $text-color;
 }
 a {
   position: relative;
@@ -15,6 +15,11 @@ a {
 *::after,
 *::before {
   box-sizing: border-box;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 //* Scrollbar

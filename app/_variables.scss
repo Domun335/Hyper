@@ -1,6 +1,7 @@
-$backGround: #151515;
-$white: #fcfcfc;
-$mainColor: #5721df;
+//* Variables
+$background-color: #151515;
+$text-color: #fcfcfc;
+$main-color: #5721df;
 
 //* Flex template
 @mixin setFlex($flex-direction, $justify-content: center, $align-items: center) {
@@ -21,17 +22,17 @@ $mainColor: #5721df;
 //* Button
 %btn {
   padding: 4px 12px;
-  background-color: $mainColor;
+  background-color: $main-color;
   color: #fff;
   font-size: 0.9rem;
-  border: 1px solid $mainColor;
+  border: 1px solid $main-color;
   border-radius: 10px;
   user-select: none;
   cursor: pointer;
-  box-shadow: 0px 0px 8px $mainColor;
+  box-shadow: 0px 0px 8px $main-color;
   transition: 0.4s box-shadow;
 
   &:hover {
-    box-shadow: 0px 0px 20px $mainColor;
+    box-shadow: 0px 0px 20px $main-color;
   }
 }

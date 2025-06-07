@@ -1,9 +1,9 @@
 'use client'
 
-import './lista-zadan.scss'
+import './todo.scss'
 import { useEffect, useState } from 'react'
 
-export default function ListaZadan() {
+export default function ToDo() {
   const [newItem, setNewItem] = useState('')
   const [todos, setTodos] = useState([])
 

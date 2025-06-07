@@ -11,6 +11,7 @@
     margin-top: 85px;
     width: min(500px, 95%);
     @include setFlex(column);
+    gap: 10px;
 
     label {
       margin-bottom: 40px;
@@ -18,7 +19,7 @@
       font-weight: bold;
     }
     input {
-      padding: 5px 10px;
+      padding: 6px 10px;
       width: 100%;
       border: 2px solid #000;
       border-radius: 15px;
@@ -26,17 +27,19 @@
     }
   }
   &__submit {
-    padding: 2px;
+    padding: 4px;
     width: 80%;
     border-radius: 15px;
-    background-color: $white;
+    background-color: $main-color;
+    color: $text-color;
     font-size: 1.1rem;
     border: 1px solid #000;
-    transition: 0.1s;
+    transition: 0.3s;
+    cursor: pointer;
 
-    &:active {
-      background-color: #0000007a;
-      color: #fff;
+    &:hover {
+      color: #000;
+      background-color: $text-color;
     }
   }
   &__list {
@@ -73,7 +76,7 @@
       width: 25px;
       height: 25px;
       display: block;
-      background-color: $white;
+      background-color: $text-color;
       border: 2px solid #000;
       border-radius: 10px;
     }
@@ -86,7 +89,7 @@
       width: 15px;
       height: 15px;
       display: block;
-      background-color: $mainColor;
+      background-color: $main-color;
       border-radius: 6px;
       scale: 0;
       transition: 0.1s scale;

@@ -38,6 +38,11 @@ export default function Header() {
             Todo
           </Link>
         </li>
+        <li>
+          <Link href="/srednia" onClick={reset}>
+            Średnia
+          </Link>
+        </li>
       </ul>
     </div>
   )

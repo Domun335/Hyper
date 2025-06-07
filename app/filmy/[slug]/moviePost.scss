@@ -1,6 +1,6 @@
 @use '@/app/variables' as *;
 
-.post-film {
+.movie-post {
   margin: auto;
   width: min(600px, 95%);
   @include setFlex(column);
@@ -16,7 +16,7 @@
   }
   &__border {
     width: 100%;
-    border-color: $mainColor;
+    border-color: $main-color;
   }
   &__title {
     margin-bottom: 10px;
@@ -29,7 +29,7 @@
     font-size: 1.1rem;
   }
   &__return {
-    color: $mainColor;
+    color: $main-color;
     font-size: 1.1rem;
     font-weight: bold;
   }

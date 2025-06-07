@@ -1,0 +1,44 @@
+@use '../variables.scss' as *;
+
+.mean {
+  margin: auto;
+  width: min(1280px, 95%);
+  min-height: calc(100vh - 200px);
+  @include setFlex(column);
+  gap: 10px;
+
+  &__title {
+    font-size: 2rem;
+  }
+  &__input {
+    padding: 6px 10px;
+    width: min(500px, 95%);
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 1rem;
+  }
+  &__buttons {
+    width: min(450px, 90%);
+    @include setFlex(row);
+    gap: 5px;
+  }
+  &__button {
+    padding: 4px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: $main-color;
+    color: $text-color;
+    font-size: 1.1rem;
+    border: 1px solid #000;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+      background-color: $text-color;
+    }
+  }
+  &__result {
+    font-size: 1.5rem;
+  }
+}
